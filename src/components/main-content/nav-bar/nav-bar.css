@@ -1,0 +1,7 @@
+.nav-bar-container {
+    height: 5rem;
+    background-color: pink;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: row;
+}

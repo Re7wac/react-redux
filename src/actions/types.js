@@ -1,0 +1,8 @@
+export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
+export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
+
+export const SET_DARK_THEME = 'SET_DARK_THEME';
+export const SET_LIGHT_THEME = 'SET_LIGHT_THEME';
+export const SET_SOLAR_THEME = 'SET_SOLAR_THEME';
+
+export const SET_BODY_CLASS = 'SET_BODY_CLASS';

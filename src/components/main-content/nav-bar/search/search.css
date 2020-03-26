@@ -1,0 +1,10 @@
+.container {
+    width: 30%;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding: 0px 25px;
+}
+
+.text-field {
+    width: 100%;
+}
