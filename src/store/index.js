@@ -7,11 +7,9 @@ import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
 import {
     openSideBar,
-    closeSideBar
 } from '../actions/sidebar-actions';
 import {
-    setDarkTheme,
-    setLightTheme
+    setTheme,
 } from '../actions/theme-ations';
 
 
@@ -26,5 +24,5 @@ const store = createStore(rootReducer, intialState, compose(applyMiddleware(...m
 
 store.subscribe(v => console.log(store.getState()));
 store.dispatch(openSideBar())
-store.dispatch(setDarkTheme())
+store.dispatch(setTheme())
 export default store;

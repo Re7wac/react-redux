@@ -1,6 +1,5 @@
 import React from "react";
 import { closeSideBar, openSideBar } from "../../actions/sidebar-actions";
-import store from "../../store";
 import Menu from "./Menu";
 import "./side-bar.css";
 import { useDispatch } from "react-redux";

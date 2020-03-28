@@ -1,29 +1,27 @@
-import React, { useEffect } from "react";
+import React, { Component } from "react";
+import { setTheme } from "../../actions/theme-ations";
+import { useDispatch } from "react-redux";
 const Theme = props => {
-  const theme = {
-    dark: "light",
-    light: "solar",
-    solar: "dark"
-  };
+  const dispatch = useDispatch();
+  const themeMap = { light: "solar", solar: "dark", dark: "light" };
+
   const bodyClass = document.body.classList;
+  let tmp;
+  const theme =
+    localStorage.getItem("theme") ||
+    localStorage.setItem("theme", themeMap.dark);
+  // useDispatch(setTheme());
+  bodyClass.add(theme);
 
-  useEffect(() => {
-    let tmp;
-    const theme =
-      localStorage.getItem("theme") ||
-      ((tmp = Object.keys(Theme)[0]), localStorage.setItem("theme", tmp), tmp);
-
-    bodyClass.add(theme);
-
-    return () => {};
-  }, []);
   const toggleTheme = () => {
     const current = localStorage.getItem("theme");
-    const next = theme[current];
-
+    const currindex = themeMap;
+    const next = themeMap[current];
+    dispatch(setTheme(next));
     bodyClass.replace(current, next);
     localStorage.setItem("theme", next);
   };
+
   return (
     <li className="nav-item" id="themeButton">
       <a onClick={toggleTheme} className="nav-link">
@@ -48,6 +46,7 @@ const Theme = props => {
               fill="currentColor"
               d="M332.2 426.4c8.1-1.6 13.9 8 8.6 14.5a191.18 191.18 0 0 1-149 71.1C85.8 512 0 426 0 320c0-120 108.7-210.6 227-188.8 8.2 1.6 10.1 12.6 2.8 16.7a150.3 150.3 0 0 0-76.1 130.8c0 94 85.4 165.4 178.5 147.7z"
               className="fa-primary"
+              a
             ></path>
           </g>
         </svg>
@@ -104,4 +103,5 @@ const Theme = props => {
     </li>
   );
 };
+
 export default Theme;

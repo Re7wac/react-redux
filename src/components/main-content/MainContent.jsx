@@ -15,7 +15,6 @@ const MainContent = props => {
       className="main-content"
       className={navsideState !== "open" ? "full-width" : "small-width"}
     >
-      <h1>sdfsdf sdfsdfsdf sdfsdsdf sdfsdfsdf sdfsdf sd sdf {theme}</h1>
       <Navbar />
     </div>
   );
@@ -23,7 +22,7 @@ const MainContent = props => {
 
 const mapStateToProps = state => ({
   sideBar: state.sideBar.open,
-  theme: state.sideBar.theme
+  theme: state.theme.theme
 });
 
 export default connect(mapStateToProps)(MainContent);
