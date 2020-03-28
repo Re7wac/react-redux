@@ -24,5 +24,10 @@
 }
 
 .nav-item:hover {
-    color: red;
+    color: var(--text-primary);
+}
+
+.Mui-selected,
+.MuiSvgIcon-root {
+    color: var(--text-primary);
 }
