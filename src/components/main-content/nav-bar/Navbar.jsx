@@ -8,7 +8,8 @@ import Search from "./search/Search";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    height: "100%"
   },
 
   menuButton: {

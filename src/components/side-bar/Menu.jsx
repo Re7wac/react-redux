@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Logo from "./Logo";
 import Theme from "./Theme";
+import { Link } from "react-router-dom";
 
 const Menu = props => {
   const elements = ["one", "two", "three", "four"];
@@ -8,7 +9,7 @@ const Menu = props => {
   for (const [index, value] of elements.entries()) {
     items.push(
       <li className="nav-item" key={index}>
-        <a href="#" className="nav-link">
+        <Link to="/newspage" className="nav-link">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -33,7 +34,7 @@ const Menu = props => {
             </g>
           </svg>
           <span className="link-text">{value}</span>
-        </a>
+        </Link>
       </li>
     );
   }

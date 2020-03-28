@@ -1,12 +1,21 @@
 import React from "react";
-import Navbar from "../components/main-content/nav-bar/Navbar";
+import { connect } from "react-redux";
 
-function AboutPage() {
+const AboutPage = props => {
+  const navsideState = props.sideBar.open;
+  const theme = props.theme;
   return (
     <div className="page-container">
-      <h1>About us dfsfds dsfsdf dsf fds s sd sd sf</h1>
+      <h1>
+        About us dfsfds dsfsdf dsf fds s sd sd sf {navsideState} {theme}
+      </h1>
     </div>
   );
-}
+};
 
-export default AboutPage;
+const mapStateToProps = state => ({
+  sideBar: state.sideBar.open,
+  theme: state.theme.theme
+});
+
+export default connect(mapStateToProps)(AboutPage);

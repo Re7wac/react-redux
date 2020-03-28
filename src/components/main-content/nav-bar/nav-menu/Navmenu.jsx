@@ -14,9 +14,12 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    height: 80,
     background: "transparent !important",
-    display: "flex"
+    display: "flex",
+    height: "100%"
+  },
+  item: {
+    height: "100%"
   }
 });
 
@@ -29,51 +32,46 @@ export default function Navmenu() {
   };
 
   return (
-    <BottomNavigation
-      value={value}
-      onChange={handleChange}
-      className={classes.root}
-    >
-      <Link to="/">
-        <BottomNavigationAction
-          label="Our Company"
-          value="Our Company"
-          icon={<RestoreIcon />}
-        />
-      </Link>
-      <Link to="/aboutpage">
-        <BottomNavigationAction
-          label="News"
-          value="News"
-          icon={<FavoriteIcon />}
-        />
-      </Link>
-      <Link to="/contactuspage">
-        <BottomNavigationAction
-          label="About us"
-          value="About us"
-          icon={<LocationOnIcon />}
-        />
-      </Link>
-      <BottomNavigationAction
-        label="Contact us"
-        value="Contact us"
-        icon={<FolderIcon />}
-      />
+    <div className="navmenu-container">
+      <BottomNavigation
+        value={value}
+        onChange={handleChange}
+        className={classes.root}
+      >
+        <Link to="/">
+          <BottomNavigationAction
+            label="Our Company"
+            value="Our Company"
+            icon={<RestoreIcon />}
+            className={classes.item}
+          />
+        </Link>
+        <Link to="/aboutpage">
+          <BottomNavigationAction
+            label="News"
+            value="News"
+            icon={<FavoriteIcon />}
+            className={classes.item}
+          />
+        </Link>
+        <Link to="/contactuspage">
+          <BottomNavigationAction
+            label="About us"
+            value="About us"
+            icon={<LocationOnIcon />}
+            className={classes.item}
+          />
+        </Link>
+        <Link to="/contactuspage">
+          <BottomNavigationAction
+            label="Contact us"
+            value="Contact us"
+            icon={<FolderIcon />}
+            className={classes.item}
+          />
+        </Link>
+      </BottomNavigation>
       <Signin />
-    </BottomNavigation>
+    </div>
   );
-}
-{
-  /* <div className="nav-menu-container">
-  <ul className="nav-menu">
-    <li className="nav-item">Our Company</li>
-    <li className="nav-item">News</li>
-    <li className="nav-item">Our vision</li>
-    <li className="nav-item">About us</li>
-    <li className="nav-item">Contact us</li>
-  </ul>
-
-  <Language />
-</div> */
 }
