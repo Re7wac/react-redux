@@ -5,7 +5,7 @@ const Logo = probs => {
     <li className="logo">
       <a href="#" className="nav-link">
         <i className="fas fa-angle-double-right fa-secondary"></i>
-        <span className="link-text">Press</span>
+        <span className="link-text">RE7</span>
       </a>
     </li>
   );
