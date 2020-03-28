@@ -9,6 +9,7 @@ import FolderIcon from "@material-ui/icons/Folder";
 import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   root: {
@@ -33,21 +34,27 @@ export default function Navmenu() {
       onChange={handleChange}
       className={classes.root}
     >
-      <BottomNavigationAction
-        label="Our Company"
-        value="Our Company"
-        icon={<RestoreIcon />}
-      />
-      <BottomNavigationAction
-        label="News"
-        value="News"
-        icon={<FavoriteIcon />}
-      />
-      <BottomNavigationAction
-        label="About us"
-        value="About us"
-        icon={<LocationOnIcon />}
-      />
+      <Link to="/">
+        <BottomNavigationAction
+          label="Our Company"
+          value="Our Company"
+          icon={<RestoreIcon />}
+        />
+      </Link>
+      <Link to="/aboutpage">
+        <BottomNavigationAction
+          label="News"
+          value="News"
+          icon={<FavoriteIcon />}
+        />
+      </Link>
+      <Link to="/contactuspage">
+        <BottomNavigationAction
+          label="About us"
+          value="About us"
+          icon={<LocationOnIcon />}
+        />
+      </Link>
       <BottomNavigationAction
         label="Contact us"
         value="Contact us"

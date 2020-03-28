@@ -6,14 +6,6 @@
 
 }
 
-.small-width {
-    transition: 600ms;
-    padding-left: 11rem;
-}
-
-.full-width {
-    transition: 550ms;
-}
 
 .MuiToolbar-gutters {
     padding: 0 !important;

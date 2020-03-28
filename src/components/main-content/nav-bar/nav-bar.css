@@ -29,13 +29,13 @@
 /* Large screens */
 @media only screen and (min-width: 600px) {
     .full-width {
-        padding-left: 2.5rem;
+        padding-left: 5rem;
         transition: 600ms !important;
 
     }
 
     .small-width {
         transition: 600ms !important;
-        padding-left: 13.5rem !important;
+        padding-left: 16rem !important;
     }
 }
