@@ -4,12 +4,19 @@ import Theme from "./Theme";
 import { Link } from "react-router-dom";
 
 const Menu = props => {
-  const elements = ["one", "two", "three", "four"];
+  const elements = [
+    { label: "News", url: "/newspage" },
+    { label: "Events", url: "/eventspage" },
+    { label: "Support", url: "/supportpage" },
+    { label: "Services", url: "/servicespage" }
+  ];
   const items = [];
-  for (const [index, value] of elements.entries()) {
+  elements.forEach(data => {
+    const label = data.label;
+    const url = data.url;
     items.push(
-      <li className="nav-item" key={index}>
-        <Link to="/newspage" className="nav-link">
+      <li className="nav-item" key={label}>
+        <Link to={url} className="nav-link">
           <svg
             aria-hidden="true"
             focusable="false"
@@ -33,11 +40,11 @@ const Menu = props => {
               ></path>
             </g>
           </svg>
-          <span className="link-text">{value}</span>
+          <span className="link-text">{label}</span>
         </Link>
       </li>
     );
-  }
+  });
   return (
     <ul className="navbar-nav">
       <Logo />

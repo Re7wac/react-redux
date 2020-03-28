@@ -8,6 +8,9 @@ import AboutPage from "../../pages/AboutPage";
 import ContactusPage from "../../pages/ContactusPage";
 import HomePage from "../../pages/HomePage";
 import NewsPage from "../../pages/NewsPage";
+import EventsPage from "../../pages/EventsPage";
+import SupportPage from "../../pages/SupportPage";
+import ServicesPage from "../../pages/ServicesPage";
 const MainContent = props => {
   const navsideState = props.sideBar.open;
   const theme = props.theme;
@@ -26,6 +29,9 @@ const MainContent = props => {
         <Route exact path="/aboutpage" component={AboutPage} />
         <Route exact path="/contactuspage" component={ContactusPage} />
         <Route exact path="/newspage" component={NewsPage} />
+        <Route exact path="/eventspage" component={EventsPage} />
+        <Route exact path="/supportpage" component={SupportPage} />
+        <Route exact path="/servicespage" component={ServicesPage} />
 
         <Redirect to="/" />
       </Switch>
