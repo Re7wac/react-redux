@@ -1,21 +1,23 @@
 import React from "react";
 
 import InputBase from "@material-ui/core/InputBase";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import "./search.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1
+    flexGrow: 0,
+    marginLeft: "4%",
+    backgroundColor: "secondary"
   },
 
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
+    backgroundColor: "  rebeccapurple",
     "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25)
+      // backgroundColor: fade(theme.palette.common.white, 0.25)
     },
     marginLeft: 0,
     width: "100%",
@@ -55,21 +57,19 @@ const Search = props => {
   const classes = useStyles();
 
   return (
-    <div className="container">
-      <div className={classes.root}>
-        <div className={classes.search}>
-          <div className={classes.searchIcon}>
-            <SearchIcon />
-          </div>
-          <InputBase
-            placeholder="Search…"
-            classes={{
-              root: classes.inputRoot,
-              input: classes.inputInput
-            }}
-            inputProps={{ "aria-label": "search" }}
-          />
+    <div className={classes.root}>
+      <div className={classes.search}>
+        <div className={classes.searchIcon}>
+          <SearchIcon />
         </div>
+        <InputBase
+          placeholder="Search…"
+          classes={{
+            root: classes.inputRoot,
+            input: classes.inputInput
+          }}
+          inputProps={{ "aria-label": "search" }}
+        />
       </div>
     </div>
   );

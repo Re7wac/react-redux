@@ -1,41 +1,36 @@
 .nav-bar-container {
-    height: 5rem;
-    background-color: var(--bg-secondary);
-    margin-left: 5rem;
-    display: flex;
-    flex-direction: row;
+  height: 5rem;
+  background-color: rebeccapurple;
+  margin-left: 5rem;
+  display: flex;
+  flex-direction: row;
 }
 
-
-
 .MuiAppBar-root {
-    height: 5rem !important;
+  height: 5rem !important;
 }
 
 @media only screen and (max-width: 600px) {
-    .full-width {
-        padding-left: 0rem;
-        transition: none;
+  .full-width {
+    padding-left: 0rem;
+    transition: none;
+  }
 
-    }
-
-    .small-width {
-        transition: 0ms !important;
-        padding-left: 0 !important;
-    }
-
+  .small-width {
+    transition: 0ms !important;
+    padding-left: 0 !important;
+  }
 }
 
 /* Large screens */
 @media only screen and (min-width: 600px) {
-    .full-width {
-        padding-left: 5rem;
-        transition: 600ms !important;
+  .full-width {
+    padding-left: 5rem;
+    transition: 600ms !important;
+  }
 
-    }
-
-    .small-width {
-        transition: 600ms !important;
-        padding-left: 16rem !important;
-    }
+  .small-width {
+    transition: 600ms !important;
+    padding-left: 16rem !important;
+  }
 }
