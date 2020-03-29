@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Logo from "./Logo";
 import Theme from "./Theme";
 import { Link } from "react-router-dom";

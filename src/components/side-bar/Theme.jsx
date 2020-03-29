@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { setTheme } from "../../actions/theme-ations";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 const Theme = props => {
   const dispatch = useDispatch();
   const themeMap = { light: "solar", solar: "dark", dark: "light" };
@@ -24,7 +25,7 @@ const Theme = props => {
 
   return (
     <li className="nav-item" id="themeButton">
-      <a onClick={toggleTheme} className="nav-link">
+      <Link onClick={toggleTheme} className="nav-link">
         <svg
           className="theme-icon svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
           id="lightIcon"
@@ -99,7 +100,7 @@ const Theme = props => {
           </g>
         </svg>
         <span className="link-text">Themify</span>
-      </a>
+      </Link>
     </li>
   );
 };

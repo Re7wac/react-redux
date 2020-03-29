@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../components/main-content/nav-bar/Navbar";
 import "./pages.css";
 import { connect } from "react-redux";
 const HomePage = props => {
