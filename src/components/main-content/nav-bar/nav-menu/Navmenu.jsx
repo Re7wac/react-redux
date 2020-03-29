@@ -16,19 +16,19 @@ const useStyles = makeStyles({
     width: "100%",
     height: 80,
     background: "transparent !important",
-    display: "flex"
+    display: "flex",
+    marginLeft: "10%"
   },
   selected: {}
 });
 
 const styles = {
   root: {
-    color: "red"
+    color: "#eee"
   },
   selected: {
-    color: "red",
     "&$selected": {
-      color: "red"
+      color: "#64b5f6 "
     }
   }
 };
@@ -49,8 +49,8 @@ const Navmenu = props => {
       showLabels={true}
     >
       <BottomNavigationAction
-        label="Our Company"
-        value="Our Company"
+        label="Company"
+        value="Company"
         icon={<RestoreIcon />}
         component={Link}
         to="/ourcompanypage"

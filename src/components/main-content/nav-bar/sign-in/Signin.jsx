@@ -6,7 +6,7 @@ const Signin = props => {
   return (
     <div className="signin-container">
       <IconButton color="secondary" aria-label="add an alarm">
-        <AccountCircleIcon style={{ fontSize: 50 }} />
+        <AccountCircleIcon style={{ fontSize: 40 }} />
       </IconButton>
     </div>
   );
