@@ -5,15 +5,23 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./reducers";
-import {composeWithDevTools} from 'redux-devtools-extension'
+import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
+import { ThemeProvider } from "@material-ui/core";
+import theme from "./material-theme/theme";
 
-let store = createStore(rootReducer,composeWithDevTools(applyMiddleware(thunk)))
+let store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(thunk))
+);
 
 ReactDOM.render(
-  <Provider store={store}><App /></Provider>
-    ,
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
+  </Provider>,
   document.getElementById("root")
 );
 
