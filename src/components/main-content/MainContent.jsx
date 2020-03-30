@@ -13,15 +13,12 @@ import SupportPage from "../../pages/SupportPage";
 import ServicesPage from "../../pages/ServicesPage";
 const MainContent = props => {
   const navsideState = props.sideBar.open;
-  const theme = props.theme;
-  useEffect(() => {
-    console.log("test : ", navsideState);
-  }, []);
 
   return (
     <div
-      className="main-content"
-      className={navsideState !== "open" ? "full-width" : "small-width"}
+      className={
+        ("main-content", navsideState !== "open" ? "full-width" : "small-width")
+      }
     >
       <Navbar />
       <Switch>

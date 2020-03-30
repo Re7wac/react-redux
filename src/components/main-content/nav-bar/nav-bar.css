@@ -1,4 +1,4 @@
-/* .nav-bar-container {
+.nav-bar-container {
   height: 5rem;
   background-color: var(--bg-secondary);
   margin-left: 5rem;
@@ -8,7 +8,8 @@
 
 .MuiAppBar-root {
   height: 5rem !important;
-} */
+  background-color: rebeccapurple;
+}
 
 @media only screen and (max-width: 600px) {
   .full-width {

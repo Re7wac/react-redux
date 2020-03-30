@@ -1,6 +1,6 @@
 :root {
   font-size: 16px;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   --text-primary: #b6b6b6;
   --text-secondary: #ececec;
   --bg-primary: #23232e;
@@ -10,7 +10,7 @@
 
 body {
   color: black;
-  background-color: white;
+  background-color: beige;
   margin: 0;
   padding: 0;
 }
@@ -32,8 +32,6 @@ body::-webkit-scrollbar-thumb {
 
   width: 100%;
 }
-
-
 
 .dark {
   --text-primary: #b6b6b6;

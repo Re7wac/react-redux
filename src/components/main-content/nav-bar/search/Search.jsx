@@ -7,12 +7,14 @@ import "./search.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
     // width: "100%",
-    background: " !important"
+    // background: "rebeccapurple !important"
     // marginLeft: "10%"
   },
-
+  container: {
+    marginLeft: "1.5rem"
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -58,7 +60,7 @@ const Search = props => {
   const classes = useStyles();
 
   return (
-    <div className="container">
+    <div className={classes.container}>
       <div className={classes.root}>
         <div className={classes.search}>
           <div className={classes.searchIcon}>

@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     height: 80,
-    background: "transparent !important",
+    background: "rebeccapurple !important",
     display: "flex",
     marginLeft: "10%"
   },
@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
 const styles = {
   root: {
-    color: "#eee"
+    color: " "
   },
   selected: {
     "&$selected": {
