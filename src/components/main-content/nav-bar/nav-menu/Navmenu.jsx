@@ -10,20 +10,34 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
+import theme from "../../../../material-theme/theme";
+
+console.log(theme.palette.primary);
 
 const useStyles = makeStyles({
   root: {
     width: "100%",
-    background: "transparent !important",
-    display: "flex",
-    height: "100%"
+    height: 80,
+    background: theme.palette.secondary["dark"],
+    display: "flex"
   },
   item: {
     height: "100%"
   }
 });
 
-export default function Navmenu() {
+const styles = {
+  root: {
+    color: theme.palette.secondary["dark"]
+  },
+  selected: {
+    color: theme.palette.secondary["dark"],
+    "&$selected": {
+      color: theme.palette.secondary["dark"]
+    }
+  }
+};
+const Navmenu = props => {
   const classes = useStyles();
   const [value, setValue] = React.useState("recents");
 
@@ -74,4 +88,4 @@ export default function Navmenu() {
       <Signin />
     </div>
   );
-}
+};

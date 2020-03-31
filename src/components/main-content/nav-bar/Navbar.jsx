@@ -5,6 +5,7 @@ import React from "react";
 import "./nav-bar.css";
 import Navmenu from "./nav-menu/Navmenu";
 import Search from "./search/Search";
+import { Button, Badge } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -25,7 +26,7 @@ export default function Navbar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Toolbar>
           <Search />
 
