@@ -5,15 +5,19 @@ import React from "react";
 import "./nav-bar.css";
 import Navmenu from "./nav-menu/Navmenu";
 import Search from "./search/Search";
+import theme from "../../../material-theme/theme";
+import Signin from "../nav-bar/sign-in/Signin";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles(x => ({
   root: {
     flexGrow: 1,
-    height: "100%"
+    height: "100%",
+
+    width: "100$"
   },
 
   menuButton: {
-    marginRight: theme.spacing(2)
+    marginRight: x.spacing(2)
   },
   title: {
     flexGrow: 1
@@ -28,8 +32,8 @@ export default function Navbar() {
       <AppBar position="static">
         <Toolbar>
           <Search />
-
           <Navmenu />
+          <Signin />
         </Toolbar>
       </AppBar>
     </div>
