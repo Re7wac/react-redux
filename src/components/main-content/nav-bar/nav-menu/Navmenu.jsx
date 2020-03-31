@@ -1,8 +1,7 @@
 import React from "react";
-import Signin from "../sign-in/Signin";
 import "./nav-menu.css";
 
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import FolderIcon from "@material-ui/icons/Folder";
@@ -10,25 +9,29 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
-
-const useStyles = makeStyles({
+import theme from "../../../../material-theme/theme";
+const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     height: 80,
-    background: " rebeccapurple",
+    background: theme.palette.primary.main,
+
     display: "flex",
     marginLeft: "10%"
   },
   selected: {}
-});
+}));
 
 const styles = {
   root: {
-    color: "#eee"
+    color: theme.palette.secondary.contrastText,
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.05)
+    }
   },
   selected: {
     "&$selected": {
-      color: "#64b5f6 "
+      color: theme.palette.secondary.main
     }
   }
 };
@@ -46,7 +49,6 @@ const Navmenu = props => {
       value={value}
       onChange={handleChange}
       className={classes.root}
-      showLabels={true}
     >
       <BottomNavigationAction
         label="Company"
@@ -81,93 +83,8 @@ const Navmenu = props => {
         to="/contactuspage"
         classes={actionClasses}
       />
-      <Signin />
     </BottomNavigation>
   );
 };
 
 export default withStyles(styles)(Navmenu);
-// import React from "react";
-// import Signin from "../sign-in/Signin";
-// import "./nav-menu.css";
-
-// import { makeStyles } from "@material-ui/core/styles";
-// import BottomNavigation from "@material-ui/core/BottomNavigation";
-// import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
-// import FolderIcon from "@material-ui/icons/Folder";
-// import RestoreIcon from "@material-ui/icons/Restore";
-// import FavoriteIcon from "@material-ui/icons/Favorite";
-// import LocationOnIcon from "@material-ui/icons/LocationOn";
-// import { Link } from "react-router-dom";
-// import { useHistory } from "react-router-dom";
-
-// const useStyles = makeStyles({
-//   root: {
-//     width: "100%",
-//     background: "transparent !important",
-//     display: "flex",
-//     height: "100%"
-//   },
-//   "&$selected": {
-//     color: "red"
-//   }
-// });
-
-// export default function Navmenu() {
-//   const history = useHistory();
-//   const classes = useStyles();
-//   const [value, setValue] = React.useState("recents");
-//   const [state, setState] = React.useState({ navIndex: 0 });
-//   const [active, setActive] = React.useState({ navIndex: 0 });
-
-//   const handleClick = newValue => {
-//     history.push(newValue);
-//   };
-//   const handleChange = (event, newValue) => {
-//     setValue(newValue);
-//     setState({ navIndex: 2 });
-//     setActive({ active: "today" });
-//   };
-
-//   return (
-//     <div className="navmenu-container">
-//       <BottomNavigation onChange={handleChange} className={classes.root}>
-//         <BottomNavigationAction
-//           label="Our Company"
-//           value="Our Company"
-//           icon={<RestoreIcon />}
-//           component={Link}
-//           to="/"
-//           isActive={state.navIndex === 1}
-//         />
-
-//         <BottomNavigationAction
-//           label="News"
-//           value="News"
-//           component={Link}
-//           to="/newspage"
-//           icon={<FavoriteIcon />}
-//           active={state.navIndex === 2}
-//         />
-//         <BottomNavigationAction
-//           label="About us"
-//           value="About us"
-//           icon={<LocationOnIcon />}
-//           component={Link}
-//           to="/aboutpage"
-//           classActive={state.navIndex === 3}
-//         />
-//         <BottomNavigationAction
-//           label="Contact us"
-//           value="Contact us"
-//           icon={<FolderIcon />}
-//           isActive={state.navIndex === 4}
-//           onClick={() => {
-//             handleClick("/contactuspage");
-//           }}
-//         />
-//       </BottomNavigation>
-//       <Signin />
-//     </div>
-//   );
-// }

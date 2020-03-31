@@ -1,12 +1,10 @@
 .main-content {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 }
 
-
 .MuiToolbar-gutters {
-    padding: 0 !important;
+  padding: 0 !important;
 }

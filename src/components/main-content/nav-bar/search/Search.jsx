@@ -7,11 +7,15 @@ import "./search.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 0,
-    marginLeft: "4%",
-    backgroundColor: "secondary"
+    flexGrow: 1
+    // width: "100%",
+    // background: "rebeccapurple !important"
+    // marginLeft: "10%"
+    // background: theme.palette.primary.light
   },
-
+  container: {
+    marginLeft: "1.5rem"
+  },
   search: {
     position: "relative",
     borderRadius: theme.shape.borderRadius,
@@ -40,12 +44,13 @@ const useStyles = makeStyles(theme => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
+    height: "3.3ch",
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "0ch",
+      width: "15ch",
       "&:focus": {
         width: "20ch"
       }
@@ -57,10 +62,20 @@ const Search = props => {
   const classes = useStyles();
 
   return (
-    <div className={classes.root}>
-      <div className={classes.search}>
-        <div className={classes.searchIcon}>
-          <SearchIcon />
+    <div className={classes.container}>
+      <div className={classes.root}>
+        <div className={classes.search}>
+          <div className={classes.searchIcon}>
+            <SearchIcon />
+          </div>
+          <InputBase
+            placeholder="Search…"
+            classes={{
+              root: classes.inputRoot,
+              input: classes.inputInput
+            }}
+            inputProps={{ "aria-label": "search" }}
+          />
         </div>
         <InputBase
           placeholder="Search…"
