@@ -1,7 +1,7 @@
 import React from "react";
 import "./nav-menu.css";
 
-import { makeStyles, withStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import FolderIcon from "@material-ui/icons/Folder";
@@ -10,25 +10,28 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
 import theme from "../../../../material-theme/theme";
-
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     height: 80,
     background: theme.palette.primary.main,
+
     display: "flex",
     marginLeft: "10%"
   },
   selected: {}
-});
+}));
 
 const styles = {
   root: {
-    color: ""
+    color: theme.palette.secondary.contrastText,
+    "&:hover": {
+      backgroundColor: fade(theme.palette.common.white, 0.05)
+    }
   },
   selected: {
     "&$selected": {
-      color: "#64b5f6 "
+      color: theme.palette.secondary.main
     }
   }
 };
@@ -46,7 +49,6 @@ const Navmenu = props => {
       value={value}
       onChange={handleChange}
       className={classes.root}
-      showLabels={true}
     >
       <BottomNavigationAction
         label="Company"

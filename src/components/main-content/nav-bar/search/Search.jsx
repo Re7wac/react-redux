@@ -3,7 +3,6 @@ import React from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
-import theme from "../../../../material-theme/theme";
 import "./search.css";
 
 const useStyles = makeStyles(theme => ({
@@ -45,12 +44,13 @@ const useStyles = makeStyles(theme => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
+    height: "3.3ch",
     // vertical padding + font size from searchIcon
     paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
-      width: "0ch",
+      width: "15ch",
       "&:focus": {
         width: "20ch"
       }
