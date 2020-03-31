@@ -9,9 +9,7 @@
  */
 
 .Mui-selected,
-.MuiSvgIcon-root {
-  color: var(--text-primary);
-}
+.MuiSvgIcon-root {}
 
 .MuiToolbar-root {
   height: 100%;

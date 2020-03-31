@@ -15,7 +15,7 @@ const useStyles = makeStyles({
   root: {
     width: "100%",
     height: 80,
-    background: theme.palette.primary.light,
+    background: theme.palette.primary.main,
     display: "flex",
     marginLeft: "10%"
   },
