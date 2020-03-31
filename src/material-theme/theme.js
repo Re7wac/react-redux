@@ -1,5 +1,4 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { palette } from "@material-ui/system";
 import {
   indigo,
   deepOrange,
