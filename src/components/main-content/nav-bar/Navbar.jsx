@@ -5,7 +5,6 @@ import React from "react";
 import "./nav-bar.css";
 import Navmenu from "./nav-menu/Navmenu";
 import Search from "./search/Search";
-import theme from "../../../material-theme/theme";
 import Signin from "../nav-bar/sign-in/Signin";
 
 const useStyles = makeStyles(x => ({

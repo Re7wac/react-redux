@@ -3,6 +3,7 @@ import React from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { fade, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
+import theme from "../../../../material-theme/theme";
 import "./search.css";
 
 const useStyles = makeStyles(theme => ({
@@ -11,6 +12,7 @@ const useStyles = makeStyles(theme => ({
     // width: "100%",
     // background: "rebeccapurple !important"
     // marginLeft: "10%"
+    // background: theme.palette.primary.light
   },
   container: {
     marginLeft: "1.5rem"

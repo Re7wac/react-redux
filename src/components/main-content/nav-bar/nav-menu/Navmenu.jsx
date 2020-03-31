@@ -24,7 +24,7 @@ const useStyles = makeStyles({
 
 const styles = {
   root: {
-    color: " "
+    color: ""
   },
   selected: {
     "&$selected": {
