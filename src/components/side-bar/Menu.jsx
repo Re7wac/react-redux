@@ -20,17 +20,20 @@ import transitions from "@material-ui/core/styles/transitions";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-
+    whiteSpace: "nowrap",
     backgroundColor: theme.palette.secondary.light
   },
   nested: {
     paddingLeft: theme.spacing(4)
   },
   item: {
+    paddingLeft: theme.spacing(3)
+  },
+  itemLabel: {
     display: "block",
     transition: theme.transitions.create("display")
   },
-  noitem: {
+  noitemLabel: {
     display: "none",
     transition: theme.transitions.create("display")
   }
@@ -51,36 +54,42 @@ const Menu = props => {
       aria-labelledby="nested-list-subheader"
       className={classes.root}
     >
-      <ListItem button>
+      <ListItem button className={classes.item}>
         <ListItemIcon>
           <SendIcon />
         </ListItemIcon>
         <ListItemText
           primary="Sent mail"
           className={
-            props.sideBar.open === "open" ? classes.item : classes.noitem
+            props.sideBar.open === "open"
+              ? classes.itemLabel
+              : classes.noitemLabel
           }
         />
       </ListItem>
-      <ListItem button>
+      <ListItem button className={classes.item}>
         <ListItemIcon>
           <DraftsIcon />
         </ListItemIcon>
         <ListItemText
           primary="Drafts"
           className={
-            props.sideBar.open === "open" ? classes.item : classes.noitem
+            props.sideBar.open === "open"
+              ? classes.itemLabel
+              : classes.noitemLabel
           }
         />
       </ListItem>
-      <ListItem button>
+      <ListItem button className={classes.item}>
         <ListItemIcon>
           <InboxIcon />
         </ListItemIcon>
         <ListItemText
           primary="Inbox"
           className={
-            props.sideBar.open === "open" ? classes.item : classes.noitem
+            props.sideBar.open === "open"
+              ? classes.itemLabel
+              : classes.noitemLabel
           }
         />
       </ListItem>
