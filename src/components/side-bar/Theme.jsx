@@ -2,6 +2,7 @@ import React from "react";
 import { setTheme } from "../../actions/theme-ations";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import "./theme.css";
 const Theme = props => {
   const dispatch = useDispatch();
   const themeMap = { light: "solar", solar: "dark", dark: "light" };
@@ -24,7 +25,7 @@ const Theme = props => {
   };
 
   return (
-    <li className="nav-item" id="themeButton">
+    <li className="nav-item theme-button" id="themeButton">
       <Link onClick={toggleTheme} className="nav-link">
         <svg
           className="theme-icon svg-inline--fa fa-moon-stars fa-w-16 fa-7x"
