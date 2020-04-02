@@ -1,14 +1,3 @@
-.nav-bar-container {
-  height: 5rem;
-  margin-left: 5rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.MuiAppBar-root {
-  height: 5rem !important;
-}
-
 @media only screen and (max-width: 600px) {
   .full-width {
     padding-left: 0rem;

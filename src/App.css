@@ -1,12 +1,13 @@
 :root {
   font-size: 16px;
   font-family: "Open Sans";
-  --text-primary: #b6b6b6;
-  --text-secondary: #ececec;
-  --bg-primary: #23232e;
-  --bg-secondary: #141418;
-  --transition-speed: 600ms;
+  /* --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 1000ms; */
 }
+
 
 body {
   color: black;
@@ -55,10 +56,10 @@ body::-webkit-scrollbar-thumb {
 }
 
 .theme-icon {
-  display: none;
+  display: block;
 }
 
-.dark #darkIcon {
+/* .dark #darkIcon {
   display: block;
 }
 
@@ -68,4 +69,4 @@ body::-webkit-scrollbar-thumb {
 
 .solar #solarIcon {
   display: block;
-}
+} */

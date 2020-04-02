@@ -1,8 +1,6 @@
-import React, { useEffect } from "react";
-
+import React from "react";
 import Navbar from "./nav-bar/Navbar";
-import "./main-content.css";
-import { useSelector, connect } from "react-redux";
+import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router-dom";
 import AboutPage from "../../pages/AboutPage";
 import ContactusPage from "../../pages/ContactusPage";
@@ -11,6 +9,7 @@ import NewsPage from "../../pages/NewsPage";
 import EventsPage from "../../pages/EventsPage";
 import SupportPage from "../../pages/SupportPage";
 import ServicesPage from "../../pages/ServicesPage";
+
 const MainContent = props => {
   const navsideState = props.sideBar.open;
 

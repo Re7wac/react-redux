@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./logo.css";
 import { Paper, makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({

@@ -1,6 +1,4 @@
 import React from "react";
-import "./nav-menu.css";
-
 import { makeStyles, withStyles, fade } from "@material-ui/core/styles";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
