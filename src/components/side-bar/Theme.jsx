@@ -10,8 +10,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(0),
     borderRadius: 0,
     width: "100%",
-    height: "5rem",
-    position: "absolute",
+    minHeight: "5rem",
     bottom: "0px",
     justifyContent: "baseline"
   }
@@ -23,7 +22,6 @@ const Theme = props => {
   const themeMap = { light: "solar", solar: "dark", dark: "light" };
   const themeLabel = props.theme;
 
-  const bodyClass = document.body.classList;
   const theme =
     localStorage.getItem("theme") ||
     localStorage.setItem("theme", themeMap.dark);

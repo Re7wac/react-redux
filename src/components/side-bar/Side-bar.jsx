@@ -4,13 +4,14 @@ import Menu from "./Menu";
 import { useDispatch, connect } from "react-redux";
 import { makeStyles, Box } from "@material-ui/core";
 import Theme from "./Theme";
-import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles(theme => ({
   root: {
     transition: "width 600ms ease",
-    height: "100%",
+    height: "calc(100% - 64px)",
     position: "fixed",
+    display: "flex",
+    flexDirection: "column",
     width: "5rem",
     "&:hover": {
       width: "16rem"

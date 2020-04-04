@@ -4,7 +4,7 @@ import "./App.css";
 import MainContent from "./components/main-content/MainContent";
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/nav-bar";
-import { Grid, Paper, makeStyles } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import { connect } from "react-redux";
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,29 +16,21 @@ const App = props => {
   return (
     <div className={classes.root}>
       <Router>
-        <Grid
-          container
-          direction="row"
-          justify="flex-start"
-          alignItems="flex-start"
-        >
-          <Grid container spacing={12}>
-            <Grid item xs>
-              <Navbar />
-            </Grid>
+        <Grid container direction="row" xs={12}>
+          <Grid item xs={12}>
+            <Navbar />
           </Grid>
-          <Grid container spacing={12}>
-            <Grid
-              item
-              style={{
-                width: props.sideBar.open === "open" ? "250px" : "80px"
-              }}
-            >
-              <SideBar />
-            </Grid>
-            <Grid item xs>
-              <MainContent />
-            </Grid>
+
+          <Grid
+            item
+            style={{
+              width: props.sideBar.open === "open" ? "250px" : "80px"
+            }}
+          >
+            <SideBar />
+          </Grid>
+          <Grid item xs>
+            <MainContent />
           </Grid>
         </Grid>
       </Router>
