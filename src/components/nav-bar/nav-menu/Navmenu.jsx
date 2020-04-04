@@ -7,15 +7,14 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import { Link } from "react-router-dom";
-import theme from "../../../../material-theme/theme";
+import theme from "../../../material-theme/theme";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     height: 80,
     background: theme.palette.primary.main,
 
-    display: "flex",
-    marginLeft: "10%"
+    display: "flex"
   },
   selected: {}
 }));

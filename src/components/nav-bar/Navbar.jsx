@@ -22,14 +22,13 @@ const useStyles = makeStyles(x => ({
   }
 }));
 
-export default function Navbar() {
+export default function() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar>
-          <Search />
           <Navmenu />
           <Signin />
         </Toolbar>

@@ -1,9 +1,7 @@
 import React from "react";
 import { setTheme } from "../../actions/theme-ations";
 import { useDispatch, connect } from "react-redux";
-import { Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import "./theme.css";
 import { makeStyles } from "@material-ui/core";
 import SaveIcon from "@material-ui/icons/Save";
 
@@ -24,22 +22,16 @@ const Theme = props => {
   const dispatch = useDispatch();
   const themeMap = { light: "solar", solar: "dark", dark: "light" };
   const themeLabel = props.theme;
-  console.log(themeLabel);
 
   const bodyClass = document.body.classList;
-  let tmp;
   const theme =
     localStorage.getItem("theme") ||
     localStorage.setItem("theme", themeMap.dark);
-  // useDispatch(setTheme());
-  bodyClass.add(theme);
 
   const toggleTheme = () => {
     const current = localStorage.getItem("theme");
-    const currindex = themeMap;
     const next = themeMap[current];
     dispatch(setTheme(next));
-    bodyClass.replace(current, next);
     localStorage.setItem("theme", next);
   };
 

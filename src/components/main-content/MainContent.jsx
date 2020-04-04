@@ -1,5 +1,4 @@
-import React from "react";
-import Navbar from "./nav-bar/Navbar";
+import React, { Fragment } from "react";
 import { connect } from "react-redux";
 import { Route, Redirect, Switch } from "react-router-dom";
 import AboutPage from "../../pages/AboutPage";
@@ -11,15 +10,8 @@ import SupportPage from "../../pages/SupportPage";
 import ServicesPage from "../../pages/ServicesPage";
 
 const MainContent = props => {
-  const navsideState = props.sideBar.open;
-
   return (
-    <div
-      className={
-        ("main-content", navsideState !== "open" ? "full-width" : "small-width")
-      }
-    >
-      <Navbar />
+    <Fragment>
       <Switch>
         <Route exact path="/" component={HomePage} />
         <Route exact path="/aboutpage" component={AboutPage} />
@@ -31,7 +23,7 @@ const MainContent = props => {
 
         <Redirect to="/" />
       </Switch>
-    </div>
+    </Fragment>
   );
 };
 
