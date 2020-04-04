@@ -11,7 +11,7 @@ import theme from "../../../material-theme/theme";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    height: 80,
+    height: "100%",
     background: theme.palette.primary.main,
 
     display: "flex"
