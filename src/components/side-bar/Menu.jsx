@@ -18,6 +18,7 @@ import { Link, useLocation } from "react-router-dom";
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
+    height: "100%",
     whiteSpace: "nowrap",
     backgroundColor: theme.palette.secondary.light
   },
