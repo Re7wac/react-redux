@@ -8,8 +8,6 @@ import rootReducer from "./reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-import { ThemeProvider } from "@material-ui/core";
-import theme from "./material-theme/theme";
 
 let store = createStore(
   rootReducer,
@@ -18,9 +16,7 @@ let store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
-    </ThemeProvider>
+    <App />
   </Provider>,
   document.getElementById("root")
 );

@@ -5,10 +5,11 @@ import {
   blueGrey,
   red,
   grey,
-  green
+  green,
+  pink
 } from "@material-ui/core/colors";
 
-const theme = createMuiTheme({
+export const IndigoTheme = createMuiTheme({
   palette: {
     common: green,
     background: grey,
@@ -18,4 +19,25 @@ const theme = createMuiTheme({
   },
   text: blueGrey[900]
 });
-export default theme;
+
+export const OrangeTheme = createMuiTheme({
+  palette: {
+    common: green,
+    background: grey,
+    primary: deepOrange,
+    secondary: indigo,
+    error: red
+  },
+  text: blueGrey[900]
+});
+
+export const PinkTheme = createMuiTheme({
+  palette: {
+    common: green,
+    background: grey,
+    primary: pink,
+    secondary: indigo,
+    error: red
+  },
+  text: blueGrey[900]
+});

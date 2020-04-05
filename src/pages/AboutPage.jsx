@@ -8,7 +8,7 @@ const AboutPage = props => {
   return (
     <div className="page-container">
       <h1 color="secondary.main">
-        About us dfsfds dsfsdf dsf fds s sd sd sf {navsideState} {theme}
+        {navsideState} {theme}
       </h1>
       <Box color="primary.dark">primary.main</Box>
       <Box color="secondary.main">secondary.main</Box>

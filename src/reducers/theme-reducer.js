@@ -1,7 +1,7 @@
 import { SET_THEME } from "../actions/types";
 
 const initialState = {
-  theme: "dark"
+  theme: "orange"
 };
 const themeReducer = (state = initialState, action) => {
   switch (action.type) {

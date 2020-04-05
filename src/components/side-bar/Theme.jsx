@@ -19,16 +19,21 @@ const useStyles = makeStyles(theme => ({
 const Theme = props => {
   const classes = useStyles();
   const dispatch = useDispatch();
-  const themeMap = { light: "solar", solar: "dark", dark: "light" };
   const themeLabel = props.theme;
 
   const theme =
-    localStorage.getItem("theme") ||
-    localStorage.setItem("theme", themeMap.dark);
+    localStorage.getItem("theme") || localStorage.setItem("theme", themeLabel);
 
   const toggleTheme = () => {
     const current = localStorage.getItem("theme");
-    const next = themeMap[current];
+    const next =
+      current === "orange"
+        ? "indigo"
+        : current === "indigo"
+        ? "pink"
+        : current === "pink"
+        ? "orange"
+        : "";
     dispatch(setTheme(next));
     localStorage.setItem("theme", next);
   };
@@ -40,9 +45,9 @@ const Theme = props => {
       size="large"
       className={classes.button}
       startIcon={
-        props.theme === "dark" ? (
+        props.theme === "orange" ? (
           <SaveIcon />
-        ) : props.theme === "light" ? (
+        ) : props.theme === "indigo" ? (
           <SaveIcon />
         ) : (
           <SaveIcon />
