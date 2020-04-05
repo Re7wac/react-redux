@@ -28,7 +28,7 @@ const App = props => {
         }
       >
         <Router>
-          <Grid container direction="row" xs={12}>
+          <Grid container direction="row">
             <Grid item xs={12}>
               <Navbar />
             </Grid>
