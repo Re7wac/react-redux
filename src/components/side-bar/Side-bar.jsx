@@ -5,21 +5,22 @@ import { useDispatch, connect } from "react-redux";
 import { makeStyles, Box } from "@material-ui/core";
 import Theme from "./Theme";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     transition: "width 600ms ease",
-    height: "calc(100% - 64px)",
+    height: "calc(100%)",
     position: "fixed",
     display: "flex",
+    paddingTop: "64px",
     flexDirection: "column",
     width: "5rem",
     "&:hover": {
-      width: "16rem"
+      width: "16rem",
     },
-    zIndex: 1
-  }
+    zIndex: 1,
+  },
 }));
-const Sidebar = props => {
+const Sidebar = (props) => {
   const classes = useStyles();
   const dispatch = useDispatch();
   return (
@@ -35,9 +36,9 @@ const Sidebar = props => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sideBar: state.sideBar.open,
-  theme: state.theme.theme
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(Sidebar);

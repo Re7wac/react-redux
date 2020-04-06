@@ -160,7 +160,7 @@ export default function () {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="sticky ">
+      <AppBar position="fixed">
         <Toolbar>
           <IconButton
             edge="start"
