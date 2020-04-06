@@ -4,14 +4,15 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
-import DraftsIcon from "@material-ui/icons/Drafts";
 import ExpandMore from "@material-ui/icons/ExpandMore";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import SendIcon from "@material-ui/icons/Send";
 import StarBorder from "@material-ui/icons/StarBorder";
 import React from "react";
 import ExpandLess from "@material-ui/icons/ExpandLess";
-
+import AccountBalanceSharpIcon from '@material-ui/icons/AccountBalanceSharp';
+import RoomSharpIcon from '@material-ui/icons/RoomSharp';
+import ContactMailSharpIcon from '@material-ui/icons/ContactMailSharp';
 import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
@@ -36,9 +37,7 @@ const useStyles = makeStyles(theme => ({
     display: "none",
     transition: theme.transitions.create("display")
   },
-  nested: {
-    paddingLeft: theme.spacing(4)
-  }
+
 }));
 
 const Menu = props => {
@@ -57,7 +56,7 @@ const Menu = props => {
     >
       <ListItem button className={classes.item} component={Link} to="/HomePage">
         <ListItemIcon>
-          <SendIcon />
+          <AccountBalanceSharpIcon />
         </ListItemIcon>
         <ListItemText
           primary="Home"
@@ -76,7 +75,7 @@ const Menu = props => {
         to="/aboutpage"
       >
         <ListItemIcon>
-          <SendIcon />
+          <RoomSharpIcon />
         </ListItemIcon>
         <ListItemText
           primary="About us"
@@ -109,11 +108,11 @@ const Menu = props => {
           open ? (
             <ExpandLess />
           ) : (
-            <ExpandMore />
-          )
+              <ExpandMore />
+            )
         ) : (
-          ""
-        )}
+            ""
+          )}
       </ListItem>
       <Collapse
         in={
@@ -141,10 +140,10 @@ const Menu = props => {
         to="/ServicesPage"
       >
         <ListItemIcon>
-          <DraftsIcon />
+          <ContactMailSharpIcon />
         </ListItemIcon>
         <ListItemText
-          primary="Our Services"
+          primary=" Services"
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
