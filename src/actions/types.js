@@ -1,5 +1,6 @@
-export const OPEN_SIDEBAR = 'OPEN_SIDEBAR';
-export const CLOSE_SIDEBAR = 'CLOSE_SIDEBAR';
+export const OPEN_SIDEBAR = "OPEN_SIDEBAR";
+export const CLOSE_SIDEBAR = "CLOSE_SIDEBAR";
 
-export const SET_THEME = 'SET_THEME';
-
+export const SET_THEME = "SET_THEME";
+export const OPEN_SLIDER_DISKTOP = "OPEN_SLIDER_DISKTOP";
+export const CLOSE_SLIDER_DISKTOP = "CLOSE_SLIDER_DISKTOP";

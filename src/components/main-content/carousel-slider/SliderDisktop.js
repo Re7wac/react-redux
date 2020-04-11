@@ -3,10 +3,10 @@ import { AutoRotatingCarousel } from ".";
 import { withStyles } from "@material-ui/core";
 import Slide from "./Slide";
 import { red, blue, green } from "@material-ui/core/colors";
+import { useDispatch } from "react-redux";
+import { closeSliderDiskTop } from "../../../actions/sliderDiskTop-actions";
 
 const SliderDisktop = (props) => {
-  console.log(props.open);
-
   const styles = {
     root: {
       backgroundColor: red[600],
@@ -17,18 +17,18 @@ const SliderDisktop = (props) => {
       backgroundColor: red[400],
     },
   };
+  console.log(props.mobile);
 
-  const StyledSlide = withStyles(styles)(Slide);
-  const [state, setState] = useState({ open: props.open });
-
+  const dispatch = useDispatch();
   return (
     <div>
       <AutoRotatingCarousel
         label="Get started"
-        open={state.open}
-        onClose={() => setState({ open: false })}
-        onStart={() => setState({ open: false })}
+        open={props.open}
+        onClose={() => dispatch(closeSliderDiskTop())}
+        onStart={() => dispatch(closeSliderDiskTop())}
         autoplay={false}
+        mobile={props.mobile}
         style={{ position: "absolute" }}
       >
         <Slide

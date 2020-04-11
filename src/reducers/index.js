@@ -1,12 +1,13 @@
 import themeReducer from "./theme-reducer";
 import sideBarReducer from "./sidebar-reducer";
-import {
-  combineReducers
-} from "redux";
+import sliderDisktopReducer from "./sliderDisktop-reducer";
+
+import { combineReducers } from "redux";
 
 const rootReducer = combineReducers({
   theme: themeReducer,
-  sideBar: sideBarReducer
+  sideBar: sideBarReducer,
+  sliderDisktop: sliderDisktopReducer,
 });
 
 export default rootReducer;
