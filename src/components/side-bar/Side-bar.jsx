@@ -1,34 +1,26 @@
 import React from "react";
-import { closeSideBar, openSideBar } from "../../actions/sidebar-actions";
 import Menu from "./Menu";
-import { useDispatch, connect } from "react-redux";
+import { connect } from "react-redux";
 import { makeStyles, Box } from "@material-ui/core";
 import Theme from "./Theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    transition: "width 600ms ease",
-    height: "calc(100%)",
+    transition: "width 300ms ease",
+    height: "100%",
     position: "fixed",
     display: "flex",
-    paddingTop: "64px",
     flexDirection: "column",
-    width: "5rem",
-    "&:hover": {
-      width: "16rem",
-    },
     zIndex: 1,
   },
 }));
 const Sidebar = (props) => {
   const classes = useStyles();
-  const dispatch = useDispatch();
   return (
     <Box
+      width={props.sideBar.open === "open" ? "16rem" : "5rem"}
       bgcolor="secondary.light"
       className={classes.root}
-      onMouseOver={() => dispatch(openSideBar())}
-      onMouseLeave={() => dispatch(closeSideBar())}
     >
       <Menu />
       <Theme />

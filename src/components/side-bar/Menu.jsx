@@ -10,37 +10,36 @@ import SendIcon from "@material-ui/icons/Send";
 import StarBorder from "@material-ui/icons/StarBorder";
 import React from "react";
 import ExpandLess from "@material-ui/icons/ExpandLess";
-import AccountBalanceSharpIcon from '@material-ui/icons/AccountBalanceSharp';
-import RoomSharpIcon from '@material-ui/icons/RoomSharp';
-import ContactMailSharpIcon from '@material-ui/icons/ContactMailSharp';
+import AccountBalanceSharpIcon from "@material-ui/icons/AccountBalanceSharp";
+import RoomSharpIcon from "@material-ui/icons/RoomSharp";
+import ContactMailSharpIcon from "@material-ui/icons/ContactMailSharp";
 import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
     height: "100%",
     whiteSpace: "nowrap",
-    backgroundColor: theme.palette.secondary.light
+    paddingTop: 70,
+    backgroundColor: theme.palette.secondary.light,
   },
   nested: {
-    paddingLeft: theme.spacing(4)
+    paddingLeft: theme.spacing(4),
   },
   item: {
-    paddingLeft: theme.spacing(3)
+    paddingLeft: theme.spacing(3),
+    height: "60px",
   },
   itemLabel: {
     display: "block",
-    transition: theme.transitions.create("display")
   },
   noitemLabel: {
     display: "none",
-    transition: theme.transitions.create("display")
   },
-
 }));
 
-const Menu = props => {
+const Menu = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   let location = useLocation();
@@ -108,11 +107,11 @@ const Menu = props => {
           open ? (
             <ExpandLess />
           ) : (
-              <ExpandMore />
-            )
+            <ExpandMore />
+          )
         ) : (
-            ""
-          )}
+          ""
+        )}
       </ListItem>
       <Collapse
         in={
@@ -173,9 +172,9 @@ const Menu = props => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sideBar: state.sideBar.open,
-  theme: state.theme.theme
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(Menu);

@@ -8,12 +8,13 @@ import { Grid, makeStyles, ThemeProvider } from "@material-ui/core";
 import { connect } from "react-redux";
 import { OrangeTheme, IndigoTheme, PinkTheme } from "./material-theme/theme";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
-  }
+    flexGrow: 1,
+    height: "100vh",
+  },
 }));
-const App = props => {
+const App = (props) => {
   const classes = useStyles();
 
   return (
@@ -36,7 +37,7 @@ const App = props => {
             <Grid
               item
               style={{
-                width: props.sideBar.open === "open" ? "250px" : "80px"
+                width: props.sideBar.open === "open" ? "250px" : "80px",
               }}
             >
               <SideBar />
@@ -51,9 +52,9 @@ const App = props => {
   );
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   sideBar: state.sideBar.open,
-  theme: state.theme.theme
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(App);

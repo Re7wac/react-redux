@@ -11,6 +11,8 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
+import { useDispatch, connect } from "react-redux";
+import { openSideBar, closeSideBar } from "../../actions/sidebar-actions";
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -75,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function () {
+const Navbar = (props) => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -99,6 +101,13 @@ export default function () {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  const dispatch = useDispatch();
+  const handleClickMenu = () => {
+    props.sideBar.open === "open"
+      ? dispatch(closeSideBar())
+      : dispatch(openSideBar());
   };
 
   const menuId = "primary-search-account-menu";
@@ -166,6 +175,7 @@ export default function () {
             edge="start"
             className={classes.menuButton}
             color="inherit"
+            onClick={handleClickMenu}
             aria-label="open drawer"
           >
             <MenuIcon />
@@ -227,4 +237,11 @@ export default function () {
       {renderMenu}
     </div>
   );
-}
+};
+
+const mapStateToProps = (state) => ({
+  sideBar: state.sideBar.open,
+  theme: state.theme.theme,
+});
+
+export default connect(mapStateToProps)(Navbar);
