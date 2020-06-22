@@ -4,7 +4,7 @@ import { AutoRotatingCarousel } from ".";
 import Slide from "./Slide";
 import { red, blue, green } from "@material-ui/core/colors";
 import { useDispatch } from "react-redux";
-import { closeSliderDiskTop } from "../../../actions/sliderDiskTop-actions";
+import { closeSliderDiskTop } from "../../actions/sliderDiskTop-actions";
 
 const SliderDisktop = props => {
   // const styles = {

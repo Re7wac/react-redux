@@ -16,7 +16,7 @@ import ContactMailSharpIcon from "@material-ui/icons/ContactMailSharp";
 import { connect } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
     height: "100%",
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Menu = (props) => {
+const Menu = props => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
   let location = useLocation();
@@ -49,16 +49,16 @@ const Menu = (props) => {
   };
   return (
     <List
-      component="nav"
-      aria-labelledby="nested-list-subheader"
+      component='nav'
+      aria-labelledby='nested-list-subheader'
       className={classes.root}
     >
-      <ListItem button className={classes.item} component={Link} to="/HomePage">
+      <ListItem button className={classes.item} component={Link} to='/HomePage'>
         <ListItemIcon>
           <AccountBalanceSharpIcon />
         </ListItemIcon>
         <ListItemText
-          primary="Home"
+          primary='Home'
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
@@ -71,13 +71,13 @@ const Menu = (props) => {
         button
         className={classes.item}
         component={Link}
-        to="/aboutpage"
+        to='/aboutpage'
       >
         <ListItemIcon>
           <RoomSharpIcon />
         </ListItemIcon>
         <ListItemText
-          primary="About us"
+          primary='About us'
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
@@ -89,14 +89,14 @@ const Menu = (props) => {
         button
         className={classes.item}
         component={Link}
-        to="/EventsPage"
+        to='/EventsPage'
         onClick={handleClick}
       >
         <ListItemIcon>
           <SendIcon />
         </ListItemIcon>
         <ListItemText
-          primary="Events"
+          primary='Events'
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
@@ -119,15 +119,15 @@ const Menu = (props) => {
           open &&
           location.pathname === "/EventsPage"
         }
-        timeout="auto"
+        timeout='auto'
         unmountOnExit
       >
-        <List component="div" disablePadding>
+        <List component='div' disablePadding>
           <ListItem button className={classes.nested}>
             <ListItemIcon>
               <StarBorder />
             </ListItemIcon>
-            <ListItemText primary="Starred" />
+            <ListItemText primary='Starred' />
           </ListItem>
         </List>
       </Collapse>
@@ -136,13 +136,13 @@ const Menu = (props) => {
         button
         className={classes.item}
         component={Link}
-        to="/ServicesPage"
+        to='/ServicesPage'
       >
         <ListItemIcon>
           <ContactMailSharpIcon />
         </ListItemIcon>
         <ListItemText
-          primary=" Services"
+          primary=' Services'
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
@@ -154,13 +154,13 @@ const Menu = (props) => {
         button
         className={classes.item}
         component={Link}
-        to="/SupportPage"
+        to='/SupportPage'
       >
         <ListItemIcon>
           <InboxIcon />
         </ListItemIcon>
         <ListItemText
-          primary="Support"
+          primary='Support'
           className={
             props.sideBar.open === "open"
               ? classes.itemLabel
@@ -172,7 +172,7 @@ const Menu = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   sideBar: state.sideBar.open,
   theme: state.theme.theme,
 });

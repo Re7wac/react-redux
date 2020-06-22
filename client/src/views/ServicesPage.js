@@ -6,7 +6,7 @@ import {
   Button,
 } from "@material-ui/core";
 import React from "react";
-import SliderDisktop from "../components/main-content/carousel-slider/SliderDisktop";
+import SliderDisktop from "../components/carousel-slider/SliderDisktop";
 import { connect, useDispatch } from "react-redux";
 import { openSliderDiskTop } from "../actions/sliderDiskTop-actions";
 

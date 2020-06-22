@@ -12,8 +12,9 @@ import SearchIcon from "@material-ui/icons/Search";
 import Typography from "@material-ui/core/Typography";
 import InputBase from "@material-ui/core/InputBase";
 import { useDispatch, connect } from "react-redux";
-import { openSideBar, closeSideBar } from "../../actions/sidebar-actions";
-const useStyles = makeStyles((theme) => ({
+import { openSideBar, closeSideBar } from "../../../actions/sidebar-actions";
+import { Link } from "react-router-dom";
+const useStyles = makeStyles(theme => ({
   grow: {
     flexGrow: 1,
   },
@@ -77,7 +78,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = (props) => {
+const Navbar = props => {
   const classes = useStyles();
 
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -86,7 +87,7 @@ const Navbar = (props) => {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  const handleProfileMenuOpen = (event) => {
+  const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -99,7 +100,7 @@ const Navbar = (props) => {
     handleMobileMenuClose();
   };
 
-  const handleMobileMenuOpen = (event) => {
+  const handleMobileMenuOpen = event => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
@@ -138,16 +139,16 @@ const Navbar = (props) => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="secondary">
+        <IconButton aria-label='show 4 new mails' color='inherit'>
+          <Badge badgeContent={4} color='secondary'>
             <MailIcon />
           </Badge>
         </IconButton>
         <p>Messages</p>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 11 new notifications" color="inherit">
-          <Badge badgeContent={11} color="secondary">
+        <IconButton aria-label='show 11 new notifications' color='inherit'>
+          <Badge badgeContent={11} color='secondary'>
             <NotificationsIcon />
           </Badge>
         </IconButton>
@@ -155,13 +156,14 @@ const Navbar = (props) => {
       </MenuItem>
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
+          aria-label='account of current user'
+          aria-controls='primary-search-account-menu'
+          aria-haspopup='true'
+          color='inherit'
         >
           <AccountCircle />
         </IconButton>
+
         <p>Profile</p>
       </MenuItem>
     </Menu>
@@ -169,19 +171,19 @@ const Navbar = (props) => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="fixed">
+      <AppBar position='fixed'>
         <Toolbar>
           <IconButton
-            edge="start"
+            edge='start'
             className={classes.menuButton}
-            color="inherit"
+            color='inherit'
             onClick={handleClickMenu}
-            aria-label="open drawer"
+            aria-label='open drawer'
           >
             <MenuIcon />
           </IconButton>
-          <Typography className={classes.title} variant="h6" noWrap>
-            Breve
+          <Typography className={classes.title} variant='h6' noWrap>
+            Social Group
           </Typography>
 
           <div className={classes.search}>
@@ -189,7 +191,7 @@ const Navbar = (props) => {
               <SearchIcon />
             </div>
             <InputBase
-              placeholder="Search…"
+              placeholder='Search…'
               classes={{
                 root: classes.inputRoot,
                 input: classes.inputInput,
@@ -199,34 +201,34 @@ const Navbar = (props) => {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
+            <IconButton aria-label='show 4 new mails' color='inherit'>
+              <Badge badgeContent={4} color='secondary'>
                 <MailIcon />
               </Badge>
             </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
+            <IconButton aria-label='show 17 new notifications' color='inherit'>
+              <Badge badgeContent={17} color='secondary'>
                 <NotificationsIcon />
               </Badge>
             </IconButton>
             <IconButton
-              edge="end"
-              aria-label="account of current user"
+              edge='end'
+              aria-label='account of current user'
               aria-controls={menuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleProfileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <AccountCircle />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
             <IconButton
-              aria-label="show more"
+              aria-label='show more'
               aria-controls={mobileMenuId}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleMobileMenuOpen}
-              color="inherit"
+              color='inherit'
             >
               <MoreIcon />
             </IconButton>
@@ -239,7 +241,7 @@ const Navbar = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   sideBar: state.sideBar.open,
   theme: state.theme.theme,
 });

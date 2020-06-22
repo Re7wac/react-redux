@@ -1,5 +1,5 @@
 import React from "react";
-import { setTheme } from "../../actions/theme-ations";
+import { setTheme } from "../../../actions/theme-ations";
 import { useDispatch, connect } from "react-redux";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core";
