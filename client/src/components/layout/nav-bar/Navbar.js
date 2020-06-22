@@ -204,12 +204,14 @@ const Navbar = props => {
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
             <IconButton aria-label='show 4 new mails' color='inherit'>
-              <Badge badgeContent={4} color='secondary'>
+              <Badge color='secondary'>
+                {/* badgeContent={4} */}
                 <MailIcon />
               </Badge>
             </IconButton>
             <IconButton aria-label='show 17 new notifications' color='inherit'>
-              <Badge badgeContent={17} color='secondary'>
+              <Badge color='secondary'>
+                {/* //badgeContent={17} */}
                 <NotificationsIcon />
               </Badge>
             </IconButton>

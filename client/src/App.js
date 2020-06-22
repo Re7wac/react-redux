@@ -44,7 +44,6 @@ const App = props => {
             >
               <SideBar />
             </Grid>
-
             <Grid item xs>
               <Routers />
             </Grid>
