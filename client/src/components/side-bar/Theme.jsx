@@ -12,8 +12,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     minHeight: "5rem",
     bottom: "0px",
-    justifyContent: "baseline"
-  }
+    justifyContent: "baseline",
+  },
 }));
 
 const Theme = props => {
@@ -21,8 +21,7 @@ const Theme = props => {
   const dispatch = useDispatch();
   const themeLabel = props.theme;
 
-  const theme =
-    localStorage.getItem("theme") || localStorage.setItem("theme", themeLabel);
+  localStorage.getItem("theme") || localStorage.setItem("theme", themeLabel);
 
   const toggleTheme = () => {
     const current = localStorage.getItem("theme");
@@ -40,9 +39,9 @@ const Theme = props => {
 
   return (
     <Button
-      variant="contained"
-      color="primary"
-      size="large"
+      variant='contained'
+      color='primary'
+      size='large'
       className={classes.button}
       startIcon={
         props.theme === "orange" ? (
@@ -62,7 +61,7 @@ const Theme = props => {
 
 const mapStateToProps = state => ({
   sideBar: state.sideBar.open,
-  theme: state.theme.theme
+  theme: state.theme.theme,
 });
 
 export default connect(mapStateToProps)(Theme);

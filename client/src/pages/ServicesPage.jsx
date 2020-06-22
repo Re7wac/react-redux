@@ -5,15 +5,12 @@ import {
   Typography,
   Button,
 } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import SliderDisktop from "../components/main-content/carousel-slider/SliderDisktop";
 import { connect, useDispatch } from "react-redux";
-import {
-  openSliderDiskTop,
-  closeSliderDiskTop,
-} from "../actions/sliderDiskTop-actions";
+import { openSliderDiskTop } from "../actions/sliderDiskTop-actions";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   root: {
     padding: "16px",
     paddingTop: "64px",
@@ -23,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
   silder: {},
 }));
-const ServicesPage = (props) => {
+const ServicesPage = props => {
   const classes = useStyles();
   const dispatch = useDispatch();
   const handleToggleSlider = () => {
@@ -32,7 +29,7 @@ const ServicesPage = (props) => {
 
   return (
     <Container className={classes.root}>
-      <Typography variant="h3">Services</Typography>
+      <Typography variant='h3'>Services</Typography>
       <Button onClick={handleToggleSlider}>Open Slider</Button>
 
       <SliderDisktop open={props.sliderDisktop.sliderDisktop} mobile={false} />
@@ -50,7 +47,7 @@ Praesent commodo cursus magna, vel scelerisque nisl consectetur et.`
   );
 };
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   sliderDisktop: state.sliderDisktop,
 });
 
